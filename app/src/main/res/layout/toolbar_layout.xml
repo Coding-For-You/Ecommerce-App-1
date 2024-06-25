@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_10mdp"
+    android:layout_marginEnd="@dimen/_10mdp"
+    android:id="@+id/toolbar_constraintLayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="@dimen/_35mdp"
+        android:layout_height="@dimen/_35mdp"
+        android:layout_marginTop="@dimen/_10mdp"
+        android:src="@drawable/profile_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4mdp"
+        android:fontFamily="@font/metropolis_bold"
+        android:textColor="@color/white"
+        android:text="Hi"
+        android:textSize="@dimen/_12mdp"
+        android:textStyle="bold"
+        android:layout_marginStart="@dimen/_5mdp"
+        app:layout_constraintStart_toEndOf="@+id/profile_image"
+        app:layout_constraintTop_toTopOf="@+id/profile_image" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/metropolis_regular"
+        android:text="Let's shop now"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10mdp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txt_user_name"
+        app:layout_constraintTop_toBottomOf="@+id/txt_user_name" />
+
+    <ImageView
+        android:id="@+id/cart_icon"
+        android:layout_width="@dimen/_20mdp"
+        android:layout_height="@dimen/_20mdp"
+        android:layout_marginEnd="@dimen/_15mdp"
+        app:tint="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/notification_icon"
+        app:layout_constraintTop_toTopOf="@+id/txt_user_name"
+        app:srcCompat="@drawable/cart_icon" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cart_count_layout"
+        android:layout_width="@dimen/_10mdp"
+        android:layout_height="@dimen/_10mdp"
+        android:background="@drawable/solid_rounded_corner"
+        android:backgroundTint="@color/yellow_color"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/cart_icon"
+        app:layout_constraintEnd_toEndOf="@+id/cart_icon"
+        app:layout_constraintStart_toEndOf="@+id/cart_icon"
+        app:layout_constraintTop_toTopOf="@+id/cart_icon">
+
+        <TextView
+            android:id="@+id/txt_cart_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/metropolis_regular"
+            android:text="1"
+            android:layout_margin="@dimen/_3mdp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_8mdp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ImageView
+        android:id="@+id/notification_icon"
+        android:layout_width="@dimen/_20mdp"
+        android:layout_height="@dimen/_20mdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cart_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/cart_icon"
+        app:srcCompat="@drawable/notification_icon" />
+
+    <LinearLayout
+        android:id="@+id/edit_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_white_rounded"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/_10mdp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image">
+
+
+        <ImageView
+            android:layout_width="@dimen/_15mdp"
+            android:layout_height="@dimen/_15mdp"
+            android:layout_marginTop="@dimen/_8mdp"
+            android:layout_marginBottom="@dimen/_8mdp"
+            android:layout_marginStart="@dimen/_8mdp"
+            android:layout_marginEnd="@dimen/_8mdp"
+            app:tint="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/cart_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cart_icon"
+            app:srcCompat="@drawable/search_icon" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/metropolis_regular"
+            android:text="Search"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14mdp"
+            app:layout_constraintStart_toStartOf="@+id/txt_user_name"
+            app:layout_constraintTop_toBottomOf="@+id/txt_user_name" />
+
+
+    </LinearLayout>
+
+
+<!--    <com.mancj.materialsearchbar.MaterialSearchBar-->
+<!--        android:id="@+id/searchBar"-->
+<!--        style="@style/MaterialSearchBarLight"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:mt_hint="Search your favorite product"-->
+<!--        app:mt_placeholder="Search"-->
+<!--        app:mt_navIconEnabled="true"-->
+<!--        android:padding="@dimen/_10mdp"-->
+<!--        app:mt_maxSuggestionsCount="10"-->
+<!--        app:layout_constraintCircleRadius="@dimen/_10mdp"-->
+<!--        app:mt_speechMode="true"-->
+<!--        android:layout_marginTop="@dimen/_10mdp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/profile_image" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
